@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Main Page</title>
+    <style>
+      .middle {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .btn {
+        width: 200px;
+        height: 50px;
+        border-radius: 20px;
+        border: 4px solid rgb(181, 227, 249);
+        box-shadow: 0 0 5px rgba(181, 227, 249, 0.8);
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      .btn:hover {
+        border: 0;
+        box-shadow: 0 0 10px rgba(181, 227, 249, 1);
+        color: rgb(3, 28, 72);
+      }
+      .btn-1::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background-color: rgb(181, 227, 249);
+        top: 0;
+        z-index: -1;
+        left: 0;
+        transition: all 0.5s;
+      }
+
+      .btn-1:hover:before {
+        width: 100%;
+      }
+
+      .btn-2::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0%;
+        background-color: rgb(181, 227, 249);
+        top: 0;
+        z-index: -1;
+        left: 0;
+        transition: all 0.5s;
+      }
+
+      .btn-2:hover:before {
+        height: 100%;
+      }
+
+      .btn-3::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background-color: rgb(181, 227, 249);
+        top: 0;
+        z-index: -1;
+        right: 0;
+        transition: all 0.5s;
+      }
+
+      .btn-3:hover:before {
+        width: 100%;
+      }
+      </style>
+<body class=" ">
+    <div class="flex justify-center items-center mt-20  ">
+    <div class="grid grid-rows-3 gap-5 p-10 bg-blue-900 container h-90 w-80 rounded-3xl" style="border: 4px solid rgb(0, 234, 255) ">
+    <div class="">
+        <a href="Anshuman's Aadhaar card.pdf" class="btn btn-1 middle uppercase" onclick="playClickSound(event)" onmouseover="playHoverSound()">
+          Aadhaar Card
+        </a>
+      </div>
+      <div class="">
+        <a href="Anshuman's pan card.pdf" class="btn btn-2 middle uppercase" onclick="playClickSound(event)" onmouseover="playHoverSound()">
+          Pan Card
+        </a>
+      </div>
+      <div class="">
+        <a href="Anshuman's passport.pdf" class="btn btn-3 middle uppercase" onclick="playClickSound(event)" onmouseover="playHoverSound()">
+          passport
+        </a>
+      </div>
+    </div>
+    </div>
+      <script>
+        function playClickSound(event) {
+          event.preventDefault(); // Prevent the default link behavior
+          var clickSound = new Audio("click-2.wav");
+          clickSound.play();
+          // Redirect to the contact.html page after the sound has played
+          setTimeout(function () {
+            window.location.href = event.target.getAttribute("href");
+          }, 500);
+        }
+        function playHoverSound() {
+          var hoverSound = new Audio("click-1.wav");
+          hoverSound.play();
+        }
+        
+      </script>
+</body>
